@@ -56,7 +56,7 @@ public abstract class AbstractCmd implements Cmd{
 	}
 	
 	public void newProcess() throws IOException, InterruptedException {
-		if (!outputDir.exists()) outputDir.mkdirs();
+		if (outputDir != null && !outputDir.exists()) outputDir.mkdirs();
 		List<String> sentence = new ArrayList<>();
 		sentence.add(command);
 		if ((args != null) && !args.isEmpty()) sentence.addAll(args);
